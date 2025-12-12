@@ -1,0 +1,3 @@
+:host { display: block; }
+.welcome h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.welcome p { color: var(--gray-700); }
