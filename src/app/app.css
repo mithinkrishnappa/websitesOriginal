@@ -1,0 +1,206 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background: linear-gradient(135deg, #07111f 0%, #111827 50%, #0f172a 100%);
+  color: #e5e7eb;
+  transition: background 0.3s ease;
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #020617 0%, #0f1419 100%);
+  color: #fff;
+  padding: 2rem 1.2rem;
+  border-right: 1px solid rgba(96, 165, 250, 0.1);
+  animation: navSlideIn 0.5s ease;
+}
+
+.brand-block {
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.6s ease;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brand-subtitle {
+  margin: 0.4rem 0 0;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.2), transparent);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  background: rgba(29, 78, 216, 0.2);
+  transform: translateX(5px);
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+.nav-links a.active {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(29, 78, 216, 0.3);
+}
+
+.icon {
+  width: 1.4rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 2rem;
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.5s ease;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #60a5fa;
+  opacity: 0.8;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.topbar-badge {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.content-area {
+  padding: 2rem;
+  animation: fadeInUp 0.6s ease 0.1s backwards;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.1);
+  }
+
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+  }
+
+  .topbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .content-area {
+    padding: 1.5rem;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+  }
+}

@@ -1,3 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+/* Angular Material Theme */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
+/* Global Styles */
 @import "tailwindcss";
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

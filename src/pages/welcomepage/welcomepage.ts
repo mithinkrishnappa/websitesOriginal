@@ -1,11 +1,25 @@
-import { Component } from '@angular/core'
-import { Router } from '@angular/router';
+import { Component, ChangeDetectionStrategy } from '@angular/core'
+import { Router, RouterLink } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-welcome-page',
-  standalone: true, // required for loadComponent
+  standalone: true,
+  imports: [RouterLink, MatButtonModule, MatCardModule, MatIconModule],
   templateUrl: './welcomepage.html',
-  styleUrls: ['./welcomepage.css']
+  styleUrls: ['./welcomepage.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('600ms 200ms ease-out', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class WelcomePage {
 

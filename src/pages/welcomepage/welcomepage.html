@@ -1,42 +1,59 @@
-<header class="bg-white shadow-md">
-  <div class="mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center py-4">
-      <!-- Logo -->
-      <div class="flex items-center space-x-2 h6">
-        <img src="college_Logo.jpg" alt="College Logo" class="h-10 w-10">
-        <span class="text-4xl font-bold text-blue-700">SJB Group of Institutions</span>
-      </div>
-
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex space-x-6 justify-end">
-        <button class="text-gray-700 hover:text-blue-600 font-medium" (click)="openAbout()">About</button>
-        <a href="#courses" class="text-gray-700 hover:text-blue-600 font-medium">Courses</a>
-        <a href="#admissions" class="text-gray-700 hover:text-blue-600 font-medium">Admissions</a>
-        <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
-      </nav>
-
-      <!-- Call to Action -->
-      <div class="hidden md:block">
-        <!-- <a href="#apply" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Apply Now</a> -->
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <div class="md:hidden">
-        <button class="text-gray-700 focus:outline-none">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+<section class="portfolio-home" [@fadeIn] role="main" aria-label="Portfolio home">
+  <mat-card class="hero-card">
+    <div class="hero-content">
+      <p class="eyebrow" aria-hidden="true">Welcome to my portfolio</p>
+      <h1>Mithin K</h1>
+      <h2>.NET Full Stack Developer</h2>
+      <p class="subtitle">Building scalable enterprise solutions with .NET Core & Angular</p>
+      <p class="description">
+        Results-driven developer with 6 years of experience designing, developing, and deploying
+        enterprise applications. Skilled in building scalable solutions with strong expertise in CI/CD,
+        secure APIs, and database optimization.
+      </p>
+      <div class="actions">
+        <button mat-raised-button color="primary" routerLink="/experience" role="button" aria-label="View my experience and work history">
+          <mat-icon>work</mat-icon>
+          View experience
+        </button>
+        <button mat-stroked-button color="accent" routerLink="/projects" role="button" aria-label="View my featured projects">
+          <mat-icon>folder_special</mat-icon>
+          See projects
         </button>
       </div>
     </div>
-  </div>
-</header>
-<section class="bg-gray-100">
-  <div class="mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <video class="video" src="video.mp4" autoplay loop></video>
+    <div class="hero-image-section">
+      <img src="/profile.png" alt="Mithin K - .NET Developer - Professional headshot" class="profile-image" />
+      <div class="image-badge" aria-label="Currently working at Capgemini">
+        <mat-icon class="badge-icon">business_center</mat-icon>
+        <span class="badge-text">Capgemini</span>
+      </div>
+    </div>
+  </mat-card>
+
+  <div class="skills-highlight" role="region" aria-label="Key technical skills">
+    <mat-card class="skill-item" role="article" aria-label="Backend development skills">
+      <mat-card-content>
+        <div class="skill-label">Backend</div>
+        <div class="skill-value">.NET Core, C#</div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-item" role="article" aria-label="Frontend development skills">
+      <mat-card-content>
+        <div class="skill-label">Frontend</div>
+        <div class="skill-value">Angular, TypeScript</div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-item" role="article" aria-label="Database skills">
+      <mat-card-content>
+        <div class="skill-label">Database</div>
+        <div class="skill-value">PostgreSQL, SQL Server</div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="skill-item" role="article" aria-label="DevOps skills">
+      <mat-card-content>
+        <div class="skill-label">DevOps</div>
+        <div class="skill-value">GitHub Actions, CI/CD</div>
+      </mat-card-content>
+    </mat-card>
   </div>
 </section>
-<marquee behavior="scroll" direction="left" class="bg-red-500 text-white p-2 font-bold">
-  Admissions Open for 2026-2027! Enroll Now to Secure Your Future at SJB Group of Institutions.
-</marquee>

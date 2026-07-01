@@ -1,1 +1,41 @@
-<router-outlet />
+<div class="app-shell">
+  <aside class="sidebar" role="navigation" aria-label="Main navigation">
+    <div class="brand-block">
+      <div class="brand">Mithin K</div>
+      <p class="brand-subtitle">Lead Software Engineer</p>
+    </div>
+
+    <nav class="nav-links" aria-label="Navigation menu">
+      @for (item of navItems; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="item.path === '/' ? { exact: true } : { exact: false }"
+          [attr.aria-current]="item.path === '/' ? 'page' : null"
+          [title]="'Navigate to ' + item.label"
+          mat-button
+          class="nav-button"
+        >
+          <mat-icon [attr.aria-hidden]="true">{{ item.icon }}</mat-icon>
+          <span>{{ item.label }}</span>
+        </a>
+      }
+    </nav>
+  </aside>
+
+  <main class="main-panel">
+    <header class="topbar" role="banner">
+      <div>
+        <p class="eyebrow">Portfolio</p>
+        <h1>Software engineer crafting scalable digital experiences</h1>
+      </div>
+      <div class="topbar-badge" role="status" aria-live="polite">Available for opportunities</div>
+    </header>
+
+    <section class="content-area" role="main">
+      <div [@routeAnimation]>
+        <router-outlet />
+      </div>
+    </section>
+  </main>
+</div>
