@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-projects-page',
   standalone: true,
   imports: [MatCardModule, MatIconModule],
+  templateUrl: './projects.html',
+  styleUrls: ['./projects.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('staggerIn', [

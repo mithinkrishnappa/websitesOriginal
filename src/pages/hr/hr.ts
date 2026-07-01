@@ -8,6 +8,8 @@ import { MatListModule } from '@angular/material/list';
   selector: 'app-hr-page',
   standalone: true,
   imports: [MatCardModule, MatIconModule, MatListModule],
+  templateUrl: './hr.html',
+  styleUrls: ['./hr.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('slideInLeft', [

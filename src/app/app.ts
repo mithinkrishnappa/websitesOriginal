@@ -39,3 +39,5 @@ export class App {
     { label: 'Experience', path: '/experience', icon: 'work' },
     { label: 'Projects', path: '/projects', icon: 'folder_special' },
     { label: 'Contact', path: '/contact', icon: 'email' },
+  ];
+}

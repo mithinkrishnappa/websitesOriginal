@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
   selector: 'app-support-page',
   standalone: true,
   imports: [MatCardModule, MatIconModule, MatButtonModule],
+  templateUrl: './support.html',
+  styleUrls: ['./support.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeInUp', [
