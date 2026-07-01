@@ -1,15 +1,12 @@
 import { Routes } from '@angular/router';
-import { App } from '../app/app';
+import { AboutComponent } from '../pages/about-component/about-component';
 import { WelcomePage } from '../pages/welcomepage/welcomepage';
 
 export const routes: Routes = [
   {
     path: '',
-    component: App, // or whatever your default component is
-  },
-  {
-    path: 'welcome',
     loadComponent: () =>
       import('../pages/welcomepage/welcomepage').then((m) => m.WelcomePage),
   },
+  { path: 'about', component: AboutComponent },
 ];
